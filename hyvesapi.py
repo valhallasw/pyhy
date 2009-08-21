@@ -8,7 +8,8 @@ aggressive_fields = {
 	# ETC
 	'users.getByUsername':    ['commentscount', 'respectscount', 'tags', 'fancylayouttag', 'geolocation', 'cityname', 'countryname', 'profilepicture', 'whitespaces', 'onmymind', 'scrapscount', 'testimonialscount', 'respectscount', 'profilevisible', 'scrapsvisible', 'viewscount', 'usertypes', 'relationtype', 'aboutme', 'mobileurl']
 	}
-
+# Based on xmlrpclib
+# see http://svn.python.org/view/python/trunk/Lib/xmlrpclib.py
 class _Method:
     def __init__(self, send, name):
         self.__send = send
