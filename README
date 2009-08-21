@@ -1,0 +1,15 @@
+Python Hyves API.
+
+dependencies:
+ * oauth
+
+comm.py / HyvesAPIComm:
+ * handle oAuth
+ * handle server exceptions (todo)
+ * handle minimal parameters (ha_version, ha_fancylayout, ha_format)
+
+hyvesapi.py / HyvesAPIProxy
+ * convert python method calls to hyves API requests
+ * set default ha_responsefields when loading aggressively
+
+demo.py contains a small demonstation
