@@ -1,8 +1,7 @@
 import logging
 logging.basicConfig(level=logging.DEBUG)
                     #^ set to logging.INFO for less verbose information
-from comm import HyvesAPIComm
-from hyvesapi import HyvesAPIProxy
+from pyhy.comm import HyvesAPIComm, HyvesAPIProxy
 
 # enter private information in seperate file
 from config import consumer_key, consumer_pass
