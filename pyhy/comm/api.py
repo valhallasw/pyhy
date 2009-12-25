@@ -1,13 +1,4 @@
-aggressive_fields = {
-	'blogs.create':       ['commentscount', 'respectscount', 'tags', 'geolocation', 'viewscount'],
-	'blogs.get':          ['commentscount', 'respectscount', 'tags', 'geolocation', 'viewscount'],
-	'blogs.getByGroup':   ['commentscount', 'respectscount', 'tags', 'geolocation', 'viewscount'],
-	'blogs.getByHangout': ['commentscount', 'respectscount', 'tags', 'geolocation', 'viewscount'],
-	'blogs.getByTag':     ['commentscount', 'respectscount', 'tags', 'geolocation', 'viewscount'],
-	'blogs.getByUser':    ['commentscount', 'respectscount', 'tags', 'geolocation', 'viewscount'],
-	# ETC
-	'users.getByUsername':    ['commentscount', 'respectscount', 'tags', 'fancylayouttag', 'geolocation', 'cityname', 'countryname', 'profilepicture', 'whitespaces', 'onmymind', 'scrapscount', 'testimonialscount', 'respectscount', 'profilevisible', 'scrapsvisible', 'viewscount', 'usertypes', 'relationtype', 'aboutme', 'mobileurl']
-	}
+from pyhy.comm.data import aggressive_fields
 # Based on xmlrpclib
 # see http://svn.python.org/view/python/trunk/Lib/xmlrpclib.py
 class _Method:
