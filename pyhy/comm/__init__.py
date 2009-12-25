@@ -1,2 +1,2 @@
-from comm import HyvesAPIComm
-from api import HyvesAPIProxy
+from pyhy.comm.comm import HyvesAPIComm
+from pyhy.comm.api import HyvesAPIProxy
