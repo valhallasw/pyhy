@@ -9,11 +9,15 @@ from config import consumer_key, consumer_pass
 #consumer_key = "XXXXXX"
 #consumer_pass = "XXXXXX"
 
-c = HyvesAPIComm(consumer_key, consumer_pass, ['users.getByUsername'])
+import pyhy.comm.data
+c = HyvesAPIComm(consumer_key, consumer_pass, 
+        pyhy.comm.data.aggressive_fields.keys())
+#['users.getByUsername'])
                                              # ^ list of functions to call. Needed to get a token.
-print c.get_authorize_url('http://some/url/')
+print c.get_authorize_url()
 # ^ go there, click accept, copy authorisation string from address and enter at the prompt
-c.authorize(raw_input('AUTH >'))
+raw_input('Accept and press enter')
+c.authorize()
 
 h = HyvesAPIProxy(c)
 

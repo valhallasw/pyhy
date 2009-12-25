@@ -23,7 +23,7 @@ class HyvesAPIComm(object):
     """
     def __init__(self, consumer_key, consumer_secret, methods,
                  expiry=ExpiryType.default, api_version='1.2.1',
-		 fancylayout = True, format='xml'):
+                 fancylayout = False, format='json'):
         self.connection = connectiontype(connectionhost)
         self.consumer =  oauth.OAuthConsumer(consumer_key, consumer_secret)
         self.methods = methods if isinstance(methods, list) else [methods]
@@ -58,13 +58,20 @@ class HyvesAPIComm(object):
                                             'strict_oauth_spec_response': 'true'})
 	self.token = oauth.OAuthToken.from_string(tdata)
 
-    def get_authorize_url(self, callback_url):
+    def get_authorize_url(self, callback_url = None):
         if not self.token:
           self.get_request_token()
-        return oauth.OAuthRequest.from_token_and_callback(token=self.token,
-                     http_url=authurl,
-                     parameters={'oauth_callback': callback_url}
-		).to_url()
+        if callback_url:
+            return oauth.OAuthRequest.from_token_and_callback(
+                    token=self.token,
+                    http_url=authurl,
+                    parameters={'oauth_callback': callback_url}
+                   ).to_url()
+        else:
+            return oauth.OAuthRequest.from_token_and_callback(
+                    token=self.token,
+                    http_url=authurl
+                   ).to_url()
 
     def authorize(self, verifier):
         logging.info('%r: acquiring user request token' % (self,))
