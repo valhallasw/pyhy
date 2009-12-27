@@ -8,7 +8,7 @@ def _createGOF(obj):
         try:
             return self._objects.setdefault(obj, {})[obj_id]
         except KeyError:
-            self._objects[obj][obj_id] = obj(obj_id)
+            self._objects[obj][obj_id] = obj(obj_id, self)
             return self._objects[obj][obj_id]
     fn.__doc__ = "Return %s object from object pool or create a new object if unavailable" % (obj.__name__,)
     return fn
