@@ -56,7 +56,8 @@ class HyvesAPIComm(object):
                                             'methods': ','.join(self.methods),
                                             'expirationtype': str(self.expiry),
                                             'strict_oauth_spec_response': 'true'})
-	self.token = oauth.OAuthToken.from_string(tdata)
+        logging.debug('%r: got %r' % (self, tdata))
+        self.token = oauth.OAuthToken.from_string(tdata)
 
     def get_authorize_url(self, callback_url = None):
         if not self.token:
@@ -73,7 +74,7 @@ class HyvesAPIComm(object):
                     http_url=authurl
                    ).to_url()
 
-    def authorize(self, verifier):
+    def authorize(self):
         logging.info('%r: acquiring user request token' % (self,))
         assert(self.token)
 	tdata = self.request(parameters={'ha_method': 'auth.accesstoken',
