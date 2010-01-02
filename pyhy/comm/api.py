@@ -16,8 +16,10 @@ class HyvesAPIProxy:
 	self.aggressive_loading = aggressive_loading
 
     def __request(self, method_name, params):
-	if self.aggressive_loading and method_name in aggressive_fields:
-	        params.setdefault('ha_responsefields', aggressive_fields[method_name])
+	if self.aggressive_loading and \
+           method_name in aggressive_fields and \
+           aggressive_fields[method_name] != []:
+            params.setdefault('ha_responsefields', aggressive_fields[method_name])
 
 	for key in params:
             if isinstance(params[key], list):
