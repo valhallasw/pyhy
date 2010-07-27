@@ -1,0 +1,29 @@
+python setup.py install
+
+Or, as this is pre-alpha software, consider installing it into its own
+virtualenv environment:
+
+~$ virtualenv pyhy
+~$ cd pyhy
+~/pyhy$ source bin/activate
+~/pyhy$ mkdir src
+~/pyhy/src$ cd src
+~/pyhy/src$ git clone git://github.com/valhallasw/pyhy.git
+~/pyhy/src$ cd pyhy
+~/pyhy/src/pyhy$ python setup.py develop
+
+To use the demonstration, acquire an API key from
+http://www.hyves.nl/api/manage/. Then create config.py in the scripts/ folder:
+
+~/pyhy/src/pyhy$ cd scripts
+~/pyhy/src/pyhy/scripts$ cat > config.py
+consumer_key = "your consumer key"
+consumer_pass = "your consumer secret"
+~/pyhy/src/pyhy/scripts$ python wall2wall.py homoapi gorillaapi
+http://www.hyves.nl/api/authorize/?oauth_token=(...)
+Accept and press enter
+
+Gorilla 2010-07-01 16:15:56
+==============================
+I want my banana back!
+(...)
