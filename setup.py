@@ -8,18 +8,26 @@ setup(name='pyhy',
       description="Library to access Hyves using its API",
       long_description="""\
 """,
-      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      classifiers=[
+      "Development Status :: 2 - Pre-Alpha",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: MIT License",
+      "Natural Language :: English",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python :: 2.5",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      ], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       keywords='',
       author='Merlijn van Deen',
       author_email='valhallasw@arctus.nl',
-      url='',
+      url='http://github.com/valhallasw/pyhy',
       license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=True,
       install_requires=[
-	'oauth',
-	'enum'
+	'oauth >= 1.0',
+	'enum >= 0.4'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

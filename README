@@ -1,7 +1,11 @@
 Python Hyves API.
 
-dependencies:
- * oauth
+requirements:
+ * python >= 2.5
+ * oauth >= 1.0
+ * enum >= 0.4
+
+Although lower versions might work, they have not been tested.
 
 comm.py / HyvesAPIComm:
  * handle oAuth
